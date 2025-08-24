@@ -29,21 +29,21 @@ Certifique-se de ter o Python 3.x instalado em seu sistema. Você pode baixá-lo
     ```
 
 2.  **Configuração dos Dados (Passo CRÍTICO!):**
-    Devido ao limite de tamanho de arquivos do GitHub, o dataset completo `steam_games.csv` está compactado como `steam_games.csv.zip` no diretório `data/dataset/`. **Você DEVE descompactá-lo antes de executar a análise.**
+    Devido ao limite de tamanho de arquivos do GitHub, o dataset completo `steam_games.csv` está compactado como `steam_games.zip` no diretório `data/dataset/`. **Você DEVE descompactá-lo antes de executar a análise.**
 
-    *   **Local do Arquivo Compactado:** `data/dataset/steam_games.csv.zip`
+    *   **Local do Arquivo Compactado:** `data/dataset/steam_games.zip`
     *   **Local de Destino (onde o arquivo descompactado deve ficar):** `data/dataset/steam_games.csv`
 
     Você pode usar sua ferramenta de descompactação de preferência. Em sistemas baseados em Unix (Linux/macOS) ou Git Bash no Windows, você pode usar:
 
     ```bash
-    unzip data/dataset/steam_games.csv.zip -d data/dataset/
+    unzip data/dataset/steam_games.zip -d data/dataset/
     ```
 
     No Windows, você pode descompactar manualmente usando o Explorador de Arquivos ou via PowerShell:
 
     ```powershell
-    Expand-Archive -LiteralPath "data/dataset/steam_games.csv.zip" -DestinationPath "data/dataset/"
+    Expand-Archive -LiteralPath "data/dataset/steam_games.zip" -DestinationPath "data/dataset/"
     ```
 
     **Verifique se, após a descompactação, o arquivo `steam_games.csv` existe em `data/dataset/`**.
@@ -103,7 +103,18 @@ Execute o script `main_analysis.py` a partir da linha de comando. Você pode esp
 Após a execução, os gráficos serão salvos no diretório `data/plots/` como arquivos `.png`. Você pode então copiá-los e utilizá-los em seus relatórios.
 
 ## 📁 Estrutura do Projeto
-. ├── main_analysis.py # Script principal para executar análises e gerar gráficos ├── steam_analyzer.py # Classe para carregar, pré-processar e analisar dados ├── chart_generator.py # Classe para gerar e salvar os gráficos ├── data/ │ ├── dataset/ │ │ └── steam_games.csv # Dataset completo (descompacte steam_games.csv.zip aqui) │ │ └── steam_games.csv.zip # Dataset completo compactado (no GitHub) │ ├── samples/ │ │ ├── steam_games_sample_01.csv # Amostras de dataset │ │ └── ... (até sample_10.csv) │ └── plots/ # Diretório onde os gráficos gerados serão salvos └── README.md # Este arquivo
+├── main_analysis.py # Script principal para executar análises e gerar gráficos
+├── steam_analyzer.py # Classe para carregar, pré-processar e analisar dados
+├── chart_generator.py # Classe para gerar e salvar os gráficos
+├── data/
+│ ├── dataset/
+│ │ └── steam_games.csv # Dataset completo (descompacte steam_games.zip aqui)
+│ │ └── steam_games.zip # Dataset completo compactado (no GitHub)
+│ ├── samples/
+│ │ ├── steam_games_sample_01.csv # Amostras de dataset
+│ │ └── ... (até sample_10.csv)
+│ └── plots/ # Diretório onde os gráficos gerados serão salvos
+└── README.md # Este arquivo
 
 
 ---
